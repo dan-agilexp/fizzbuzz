@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace FizzBuzz.API
 {
+    using FizzBuzz.API.Services;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -21,6 +23,8 @@ namespace FizzBuzz.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddScoped<IFizzBuzzService, FizzBuzzService>();
+
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

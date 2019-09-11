@@ -3,11 +3,14 @@ import thunk from 'redux-thunk';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import * as Counter from './Counter';
 import * as WeatherForecasts from './WeatherForecasts';
+import * as FizzBuzz from './FizzBuzz';
+
 
 export default function configureStore (history, initialState) {
   const reducers = {
     counter: Counter.reducer,
-    weatherForecasts: WeatherForecasts.reducer
+      weatherForecasts: WeatherForecasts.reducer,
+      fizzBuzz: FizzBuzz.reducer
   };
 
   const middleware = [
